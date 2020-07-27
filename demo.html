@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<title>Cloudinary image loader demo</title>
+</head>
+
+<body>
+
+    <h1 class="py-5 font-weight-normal text-center">Cloudinary image loader demo</h1>
+    <main class="container">
+
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="card-title h5">What does this loader do?</h3>
+
+                <ul class="card-text">
+                    <li>Responsive sizing + lazy loading</li>
+                    <li>It can load images with a maximum width</li>
+                    <li>It can load images with a fixed width</li>
+                    <li>It uses clean <em>data-src</em> with your server url</li>
+                    <li>It uses customizable Cloudinary images presets<br>like <code>w_auto,f_auto,dpr_auto,c_scale</code></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <article>
+
+            <h2 class="text-secondary text-center font-weight-light mb-3">Automatic responsive images</h2>
+            <div class="row mb-4">
+                <div class="col">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" alt="" class="cld-responsive img-fluid" loading="lazy" />
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" alt="" class="cld-responsive img-fluid" loading="lazy" />
+                </div>
+                <div class="col">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" alt="" class="cld-responsive img-fluid" loading="lazy" />
+                </div>
+            </div>
+        </article>
+
+        <hr class="my-4">
+
+        <article>
+
+            <h2 class="text-secondary text-center font-weight-light mb-3">Responsive images with data-max-width</h2>
+            <p class="text-center">The following image will be:</p>
+
+            <ul class="w-50 mx-auto">
+                <li>Always 100% max. of its parent container</li>
+                <li>100% of the viewport width if screen width is &lt; 500px</li>
+                <li>500px max. if screen width is &gt;= 500px</li>
+            </ul>
+            <div class="text-center">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" data-max-width="500" alt="" class="cld-responsive" loading="lazy" />
+            </div>
+        </article>
+
+        <hr class="my-4">
+
+        <article class="mb-5">
+
+            <h2 class="text-secondary text-center font-weight-light mb-3">Responsive images with fixed width</h2>
+            <p class="text-center">The following image will always be 150px</p>
+            <div class="text-center">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" width="150" alt="" class="cld-responsive" loading="lazy" />
+            </div>
+        </article>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.11.1/cloudinary-core-shrinkwrap.min.js"></script>
+    <script src="cloudinary-image-loader.js"></script>
+</body>
+
+</html>
