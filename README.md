@@ -2,7 +2,7 @@
 
 Small JS code to load images from Cloudinary's CDN with a clean reversible markup in any situation
 
-Demo: <http://cloudinary-images-loader.miglisoft.com/demo.html>
+Demo: <https://www.cloudinary-images-loader.miglisoft.com>
 
 **What this code does:**
 This code allows to load images from Cloudinary's CDN with a clean reversible markup.
@@ -14,7 +14,7 @@ It uses the [Cloudinary JavaScript library](https://cloudinary.com/documentation
 - Fixed width images
 - Responsive images with maximum width
 
-## How to use
+## Quick start
 
 1. Create a free Cloudinary account
 2. Setup your *Auto upload mapping* on Cloudinary:
@@ -29,7 +29,37 @@ It uses the [Cloudinary JavaScript library](https://cloudinary.com/documentation
 
 4. Change the cloudFolder and cloudName in `cloudinary-image-loader.js` according to yours
 
-5. Use the appropriate HTML markup depending on your images as in the examples below
+5. Use the appropriate HTML markup depending on your images as described below
+
+## HTML Markup (`<img />` attributes)
+
+attribute     | type         | detail    | example
+------------- |:-------------|:----------|:-----
+src           | url | any placeholder or blank src | `src="blank.png"`
+data-src      | url | relative or root-relative image | `data-src="/image.png"`
+data-fixed-width | boolean | width for non-responsive images | `data-fixed-width="true"`
+data-max-width | number | image max. width in px | `data-max-width="768"`
+data-ratio | number | image aspect ratio width/height | `data-max-width="768"`
+
+## A few more details
+
+- The function replaces the `data-src` URL (relative or root-relative) with cloudinary URL.
+
+    Example: `"/image.jpg"` or `"image.jpg"` will become `"https://res.cloudinary.com/.../image.jpg"`
+
+- use `data-fixed-width="true"` to set a fixed image width
+
+- use `data-max-width` attribute to limit the img width (will generate `srcset` + `sizes`).
+
+  Example: `data-max-width="750"`
+
+- add `data-ratio` attribute to set automatic image `height`. Ratio is width/height.
+
+  Example: `data-ratio="1.5"`
+
+- `data-ratio` helps to avoid [Cumulative Layout Shift](https://web.dev/optimize-cls/).
+
+- You can set all others common image attributes as desired: `width`, `height`, `alt`, `class`, ...
 
 _____________________
 
@@ -68,6 +98,7 @@ width="xxx">
 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
 data-src="/assets/images/image.png"
 width="508"
+data-fixed-width="true"
 alt="My image"
 class="cld-responsive"
 loading="lazy">

@@ -6,6 +6,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<!-- Cloudinary's Client Hints meta tag -->
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -60,10 +63,9 @@
 
             <ul class="w-50 mx-auto">
                 <li>Always 100% max. of its parent container</li>
-                <li>100% of the viewport width if screen width is &lt; 500px</li>
                 <li>500px max. if screen width is &gt;= 500px</li>
             </ul>
-            <div class="text-center">
+            <div class="w-100 text-center">
                 <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" data-max-width="500" alt="" class="cld-responsive" loading="lazy" />
             </div>
         </article>
@@ -72,10 +74,54 @@
 
         <article class="mb-5">
 
-            <h2 class="text-secondary text-center font-weight-light mb-3">Responsive images with fixed width</h2>
+            <h2 class="text-secondary text-center font-weight-light mb-3">Images with fixed width</h2>
             <p class="text-center">The following image will always be 150px</p>
             <div class="text-center">
-                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" width="150" alt="" class="cld-responsive" loading="lazy" />
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" width="150" data-fixed-width="true" alt="" class="cld-responsive" loading="lazy" />
+            </div>
+        </article>
+
+        <article class="mb-5">
+
+            <h2 class="text-secondary text-center font-weight-light mb-3">Images with data-ratio</h2>
+            <div class="card-deck">
+                <div class="card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" class="card-img-top cld-responsive" data-ratio="1.5" alt="...">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" class="card-img-top cld-responsive" data-ratio="1.5" alt="...">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="koala.jpg" class="card-img-top cld-responsive" data-ratio="1.5" alt="...">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="mb-5">
+
+            <h2 class="text-secondary text-center font-weight-light mb-3">Image with low resolution blurry placeholder image</h2>
+            <div class="d-flex mb-4 justify-content-center">
+                <div class="w-50">
+                    <img src="https://res.cloudinary.com/demo/image/upload/e_blur:600,q_auto:low,w_auto,f_auto,dpr_1.0,c_scale/koala.jpg" data-src="koala.jpg" alt="" class="cld-responsive img-thumbnail" loading="lazy" />
+                </div>
             </div>
         </article>
     </main>
