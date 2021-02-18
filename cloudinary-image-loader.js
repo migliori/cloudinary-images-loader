@@ -43,7 +43,7 @@ images.forEach(function (img, i) {
     img.setAttribute('data-src', cloudUrl + responsivePreset + src);
 
     if (fixedWidthAttr === 'true') {
-        img.setAttribute('data-src', cloudUrl + fixedWidthPreset.replace('{width}', widthAttr) + src);
+        img.setAttribute('data-src', cloudUrl + fixedWidthPreset.replace('{width}', parseInt(widthAttr)) + src);
     } else if (maxWidthAttr !== null) {
         let maxWidth = parseInt(maxWidthAttr, 10),
             srcset = '';
